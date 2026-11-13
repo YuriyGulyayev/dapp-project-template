@@ -1,1 +1,13 @@
-# todo-0
+# todo-1 Populate this file. Or maybe this one should remain empty.
+
+# # The correct way to Git-ignore a file:
+# /file.txt
+# !/file.txt/
+
+/node_modules/
+
+# # [Comment-202611104]
+# # Issue. It appears to be unnecessary to Git-ignore this.
+# # [/Comment-202611104]
+# /.codex/config.toml
+# !/.codex/config.toml/

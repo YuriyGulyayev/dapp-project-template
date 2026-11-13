@@ -1,0 +1,9 @@
+-r
+
+-x.git/*
+-xpackage-lock.json
+-xnode_modules/*
+
+-xevm-contracts/cache/*
+-xevm-contracts/artifacts/*
+-xevm-contracts/types/*

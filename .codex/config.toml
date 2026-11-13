@@ -1,0 +1,12 @@
+# Issue. According to Comment-202611104, this file is not Git-ignored.
+
+# Local permission for a globally shared folder similar to `shared/project-state/data/`.
+default_permissions = "project-state-data"
+
+[permissions.project-state-data]
+extends = ":workspace"
+
+[permissions.project-state-data.filesystem]
+
+# [Comment-202611205/]
+"/home/user2/My-Applications/Myself/Scripts/UniqueIdNumberGenerator/Data" = "write"

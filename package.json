@@ -1,0 +1,14 @@
+{
+   "name": "@dapp-project-template/root",
+   "version": "1.0.0",
+   "type": "module",
+   "license": "MIT",
+   "private": true,
+   "engines": {
+      "node": ">=26 <27"
+   },
+   "workspaces": [
+      "evm-contracts",
+      "shared"
+   ]
+}
