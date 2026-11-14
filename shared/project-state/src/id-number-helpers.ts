@@ -43,15 +43,16 @@ export async function updateIdNumber() {
       // #region
 
       // [Comment-202405241]
-      // The user shall manually create this file and populate it with a `idNumberLength_`-digit number
+      // Assuming that this file already exists. Someone must create it and populate it with a `idNumberLength_`-digit number
       // that is less than `newDateTimeMinLimit_`, such as `200912319`.
       // Comment-202611203 relates.
       // [/Comment-202405241]
       // [Comment-202611203]
-      // The file mentioned in Comment-202405241 already exists in the poject. But I recommend you using a single file
-      // for all your projects. So copy the file to a central location outside this workspace
-      // and provide its path in this environment variable.
-      // You will likely also have to permit your AI agent sandbox to write to the file,
+      // The file mentioned in Comment-202405241 already exists in the project,
+      // which results in the ID generation working out-of-the-box.
+      // But I recommend using a single file for all your projects. So perform a one-time setup by copying the file
+      // to a central location outside this workspace and providing its path in this environment variable.
+      // You will likely also have to permit your AI agent sandbox to read and write the file,
       // similarly to how it's done near Comment-202611205.
       // [/Comment-202611203]
       let dataFilePath_ = process.env.LAST_GENERATED_ID_NUMBER_FILE_PATH;
@@ -64,6 +65,7 @@ export async function updateIdNumber() {
       // it would be nice to make multiple open attempts.
       // Issue. In case someone runs multiple instances of this script,
       // it would be nice that they waited on each other to access this file.
+      // We can use `import {flockSync,} from "fs-ext";` to implement locking.
       // But keeping it simple.
       const dataFileObject_ = await open(dataFilePath_, "r+");
 

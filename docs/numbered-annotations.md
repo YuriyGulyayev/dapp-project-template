@@ -74,28 +74,33 @@ Numbered todos rarely use a self-closing form, because a typical todo must state
 // [ToDo-202608233-1/]
 ```
 
-#### ToDo Priorities
+#### ToDo Priorities and Statuses
 
-The final hyphen-separated number, `1` in this example, is the todo priority. It is not part of the ID.
+The hyphen-separated suffix, `1` in the above example, specifies the todo's priority and/or status. This suffix is separate from the ID.
 
-We use the following priorities:
+We use the following suffixes:
 
 - `0`: to do immediately.
 - `1`: to do soon, before the next release.
 - `2`: to do later, possibly after the next release.
 - `3`: to do someday, low priority.
 - `4`: rarely used for a not-any-time-soon todo, such as doing something about a timestamp overflow in 100 years.
-- `10` through `14`: similar to respective priorities `0` through `4`. Used for todos in (1) commented code; (2) legacy docs that are no longer correct. These todos are to be done if we decide to uncomment the code or revive the docs.
-- `0?` through `4?`; `10?` through `14?`: questionable, needs rethinking.
+- `10` through `14`: these correspond to priorities `0` through `4`, but apply to commented-out code or outdated documentation that would need attention if restored.
+- `0?` through `4?`; `10?` through `14?`: the given idea needs reconsideration.
 - `0-` through `4-`; `10-` through `14-`: do not do.
 - `+` (without digits): done.
 
+Note that a typical todo is to be deleted when done. But sometimes I can decide to retain one with the `+` suffix.
+
 #### Non-Numbered ToDos
 
-We use the same priorities for **non-numbered todos** as well, for example:
+We use the same suffixes for **non-numbered todos** as well, for example:
 
 ```ts
 // ToDo-0 Do this and that ASAP.
+// ToDo-2? Reconsider whether this change is necessary.
+// ToDo-3- Retain this rejected proposal for context.
+// ToDo-+ Don't forget that this task has been completed.
 ```
 
 #### AI ToDos
@@ -118,13 +123,15 @@ The `ToDo` forms above are **human todos**. For **AI todos**, replace `ToDo` wit
 // ToDo-AI-0 Do this and that ASAP.
 ```
 
-#### ID Namespace
-
-Generate a new ID for each new numbered annotation or for any other purpose that requires one. All generated IDs share one project-wide namespace, regardless of purpose. Each ID is assigned to exactly one logical item or purpose. All uses associated with that same item or purpose intentionally reuse the same ID. For a numbered annotation, the ID is also assigned to exactly one tag family: `Comment`, `ToDo`, or `ToDo-AI`.
-
-#### Generating a New ID
+#### Generating an ID
 
 See `../shared/project-state/docs/generating-id-number.md`.
+
+#### Using IDs
+
+Generate a new ID for a new numbered annotation or another purpose requiring an identifier. Reuse an existing ID only for the same logical annotation or purpose, including its references.
+
+For numbered annotations, each ID belongs to a single tag family (`Comment`, `ToDo`, or `ToDo-AI`).
 
 #### Instructions
 
@@ -138,7 +145,7 @@ See `../shared/project-state/docs/generating-id-number.md`.
 
 - If the projected change would delete a numbered annotation's defining occurrence or only its defining tag or tags while leaving any references, include deletion of all those references in the planned change set, but first ask for permission.
 
-- If the projected change would delete all references to a numbered annotation while its defining occurrence would otherwise remain, ask for permission to convert the numbered annotation to its non-numbered form by deleting its defining tag or tags, retaining any text between paired tags. When converting a numbered todo to a non-numbered todo, preserve its priority and whether it is a human or AI todo.
+- If the projected change would delete all references to a numbered annotation while its defining occurrence would otherwise remain, ask for permission to convert the numbered annotation to its non-numbered form by deleting its defining tag or tags, retaining any text between paired tags. When converting a numbered todo to a non-numbered todo, preserve its human-or-AI designation and suffix.
 
 - When planning to delete one or more files:
   - For each numbered annotation whose defining occurrence is in a file to be deleted, if one or more references in files to be retained use the exact `applies` form, ask for permission to swap the defining occurrence with one such reference. For purposes of the projected state, swapping means that the selected retained location becomes the defining occurrence and the old defining location becomes an `applies` reference. If multiple eligible references exist, ask me which one to use.
