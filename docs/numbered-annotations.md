@@ -124,7 +124,7 @@ Generate a new ID for each new numbered annotation or for any other purpose that
 
 #### Generating a New ID
 
-See `generating-id-number.md`.
+See `../shared/project-state/docs/generating-id-number.md`.
 
 #### Instructions
 
