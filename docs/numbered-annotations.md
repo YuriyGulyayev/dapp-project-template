@@ -86,7 +86,7 @@ We use the following suffixes:
 - `3`: to do someday, low priority.
 - `4`: rarely used for a not-any-time-soon todo, such as doing something about a timestamp overflow in 100 years.
 - `10` through `14`: these correspond to priorities `0` through `4`, but apply to commented-out code or outdated documentation that would need attention if restored.
-- `0?` through `4?`; `10?` through `14?`: the given idea needs reconsideration.
+- `0?` through `4?`; `10?` through `14?`: the proposed idea needs reconsideration.
 - `0-` through `4-`; `10-` through `14-`: do not do.
 - `+` (without digits): done.
 
@@ -99,7 +99,7 @@ We use the same suffixes for **non-numbered todos** as well, for example:
 ```ts
 // ToDo-0 Do this and that ASAP.
 // ToDo-2? Reconsider whether this change is necessary.
-// ToDo-3- Retain this rejected proposal for context.
+// ToDo-3- This was a bad idea. Don't propose it again.
 // ToDo-+ Don't forget that this task has been completed.
 ```
 
@@ -130,8 +130,6 @@ See `../shared/project-state/docs/generating-id-number.md`.
 #### Using IDs
 
 Generate a new ID for a new numbered annotation or another purpose requiring an identifier. Reuse an existing ID only for the same logical annotation or purpose, including its references.
-
-For numbered annotations, each ID belongs to a single tag family (`Comment`, `ToDo`, or `ToDo-AI`).
 
 #### Instructions
 
