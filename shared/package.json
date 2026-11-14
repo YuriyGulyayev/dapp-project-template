@@ -17,7 +17,7 @@
       "build": "tsc",
       "typecheck": "tsc --noEmit",
       "test": "npm run typecheck && mocha --extension ts 'test/**/*.test.ts'",
-      "generate-id-number": "node --input-type=module --eval 'import {updateIdNumber,} from \"./project-state/src/id-number-helpers.ts\"; console.info(await updateIdNumber());'"
+      "generate-id-number": "node --input-type=module --eval 'import {updateIdNumber,} from \"./project-state/src/id-number-helpers.ts\"; console.info(\"%s\", await updateIdNumber());'"
    },
    "devDependencies": {
       "@types/mocha": "^10.0.10",

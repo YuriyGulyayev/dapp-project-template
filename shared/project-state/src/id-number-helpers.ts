@@ -57,7 +57,7 @@ export async function updateIdNumber() {
       // [/Comment-202611203]
       let dataFilePath_ = process.env.LAST_GENERATED_ID_NUMBER_FILE_PATH;
       if(dataFilePath_ === undefined || dataFilePath_ === "") {
-         console.warn("Warning. The `LAST_GENERATED_ID_NUMBER_FILE_PATH` environment variable is unset or empty; using the fallback file.");
+         console.warn("%s", "Warning. The `LAST_GENERATED_ID_NUMBER_FILE_PATH` environment variable is unset or empty; using the fallback file.");
          dataFilePath_ = join(import.meta.dirname, "../data/last-generated-id-number.txt");
       }
 
@@ -116,7 +116,7 @@ export async function updateIdNumber() {
             newDateTime_.setMinutes(sequenceNumber_);
          }
          newIdNumberAsString_ = format(newDateTime_, idNumberFormatString_);
-         // console.info(oldIdNumberAsString_, newIdNumberAsString_, newDateTimeMinLimit_.toISOString(), newDateTime_.toISOString());
+         // console.info(/*"%s",*/ oldIdNumberAsString_, newIdNumberAsString_, newDateTimeMinLimit_.toISOString(), newDateTime_.toISOString());
          if( ! (newIdNumberAsString_.length === idNumberLength_) ) {
             throw new Error("ID has overflown.");
          }
