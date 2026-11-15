@@ -1,0 +1,6 @@
+{
+   "search.exclude": {
+      "/evm-contracts/cache/": true,
+      "/evm-contracts/artifacts/": true,
+   },
+}
