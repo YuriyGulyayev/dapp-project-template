@@ -88,9 +88,7 @@ We use the following suffixes:
 - `10` through `14`: these correspond to priorities `0` through `4`, but apply to commented-out code or outdated documentation that would need attention if restored.
 - `0?` through `4?`; `10?` through `14?`: the proposed idea needs reconsideration.
 - `0-` through `4-`; `10-` through `14-`: do not do.
-- `+` (without digits): done.
-
-Note that a typical todo is to be deleted when done. But sometimes I can decide to retain one with the `+` suffix.
+- `+` (without digits): done (rarely used).
 
 #### Non-Numbered ToDos
 
@@ -98,9 +96,9 @@ We use the same suffixes for **non-numbered todos** as well, for example:
 
 ```ts
 // ToDo-0 Do this and that ASAP.
-// ToDo-2? Reconsider whether this change is necessary.
-// ToDo-3- This was a bad idea. Don't propose it again.
-// ToDo-+ Don't forget that this task has been completed.
+// ToDo-2? Reconsider this idea.
+// ToDo-3- Remember that I considered this bad idea.
+// ToDo-+ Remember that this task has been completed.
 ```
 
 #### AI ToDos
@@ -155,20 +153,20 @@ Generate a new ID for a new numbered annotation or another purpose requiring an 
 
 - Most annotations are located in source code files, but some can be located in files of other types, such as `.md` or `.txt`. In file formats that support comments, use the appropriate comment syntax. For example:
 
-```md
-<!--
-[ToDo-AI-202608225-2]
-Do this and that.
-[/ToDo-AI-202608225-2]
--->
+  ```md
+  <!--
+  [ToDo-AI-202608225-2]
+  Do this and that.
+  [/ToDo-AI-202608225-2]
+  -->
 
-<!-- ToDo-AI-202608225-2 applies. -->
+  <!-- ToDo-AI-202608225-2 applies. -->
 
-<!-- ToDo-AI-202608225-2 relates. -->
+  <!-- ToDo-AI-202608225-2 relates. -->
 
-<!-- ToDo-AI-202608225-2 relates and/or applies. -->
+  <!-- ToDo-AI-202608225-2 relates and/or applies. -->
 
-<!-- ToDo-AI-3 Do this and that. -->
-```
+  <!-- ToDo-AI-3 Do this and that. -->
+  ```
 
 - In a file like an `.md` document, it's also OK to write an annotation in text, not as a comment.

@@ -3,10 +3,15 @@
 ## Project Layout
 
 - `hardhat.config.ts` -- Hardhat configuration.
-- `contracts/` -- Solidity source files (`*.sol`) and unit tests (`*.t.sol`).
-- `test/src/tests/` -- TypeScript integration tests.
+- `contracts/` -- Contract sources (`*.sol`) and unit tests (`*.t.sol`).
+- `test/src/tests/` -- Contract integration tests (`*.ts`).
 - `ignition/` -- Hardhat Ignition deployment modules.
 - `scripts/` -- Standalone scripts run with `hardhat run`.
+- Folders such as `cache/`, `artifacts/`, `types/`, `coverage/` contain generated outputs.
+
+## Solidity
+
+- Before proposing improvements to existing Solidity code, review `docs/contract-improvement-ideas-not-to-propose-in-existing-code.md`. Do not propose the listed improvement ideas for existing code unless explicitly requested. You may propose them for new code, but do not implement them without approval in the prompt or an approved plan. This restriction does not prohibit reporting concrete defects or risks discovered during a requested code review.
 
 ## Skills
 
