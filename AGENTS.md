@@ -1,5 +1,11 @@
 #
 
+## Workspace
+
+- `package.json` lists a few NPM workspace folders.
+- Each NPM workspace folder can contain `.agents/`.
+- When working in the context of a particular NPM workspace folder, you typically must run relevant commands from the given folder.
+
 ## Git Repo
 
 - An explicit request to create or retain a repository file/folder or add an ignore rule for one counts as approval. Otherwise, ask before deciding that a newly created untracked entry should become tracked repository content, or before adding an ignore rule.
@@ -14,13 +20,15 @@
 
 ## Code Style
 
-- When hardcoding a number, if possible, use a clarifying constant expression. For example, for the number of milliseconds in a hour, use `60 * 60 * 1000` instead of `3600000`.
-- In a ternary operator `a ? b : c`, enclose each operand in parenthesis, unless it's a single thing, such as a variable or function call.
+- When hardcoding a number, if possible, use a clarifying constant expression. For example, for the number of milliseconds in an hour, use `60 * 60 * 1000` instead of `3600000`.
+- In a ternary operator `a ? b : c`, enclose each operand in parentheses, unless it's a single thing, such as a variable or function call.
+- In TypeScript, when calling a method like `console.info`, the first parameter should typically specify format, such as `"%s"`.
 
 ## Naming Conventions
 
 - In the code, name things descriptively and verbosely. This also applies to file names. Do not force names to be short. Prefer not to shorten words, except for the following: `Prev`, `Param`, `Arg`, `Char`, `Min`, `Max`, `Temp`, `Id`, `hre`. Also use commonly used abbreviations, such as `Json`, `Rpc`, `Url`, `Evm`, `Abi`, `Nft`.
-- A function parameter or local symbol name shall end and a non-public contract or class member symbol shall begin with `_`.
+- Begin non-public contract member names and non-public class member names with `_`.
+- End function parameter names and local symbol names with `_`.
 
 ## Scripts
 
