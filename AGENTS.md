@@ -3,8 +3,7 @@
 ## Workspace
 
 - `package.json` lists a few NPM workspace folders.
-- Each NPM workspace folder can contain `.agents/`.
-- When working in the context of a particular NPM workspace folder, you typically must run relevant commands from the given folder.
+- When working in an NPM workspace folder, read its applicable `AGENTS.md` files and any relevant skills under `.agents/skills/`. Also, you normally must run relevant commands from the given folder.
 
 ## Git Repo
 
@@ -22,7 +21,7 @@
 
 - When hardcoding a number, if possible, use a clarifying constant expression. For example, for the number of milliseconds in an hour, use `60 * 60 * 1000` instead of `3600000`.
 - In a ternary operator `a ? b : c`, enclose each operand in parentheses, unless it's a single thing, such as a variable or function call.
-- In TypeScript, when calling a method like `console.info`, the first parameter should typically specify format, such as `"%s"`.
+- In TypeScript, when calling a method such as `console.info`, typically pass a format string, such as `"%s"`, as the first argument.
 
 ## Naming Conventions
 
